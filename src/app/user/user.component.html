@@ -1,6 +1,5 @@
 <div>
   <h3>Vous inscrire</h3>
-  <form (ngSubmit)="onSubmit()">
     <fieldset>
       <label>
         Username:
@@ -16,21 +15,35 @@
         Password:
           <input type="password" [formControl]="password">
       </label>
+      <br>
+      <label>
+        Street:
+          <input type="text" [formControl]="street">
+      </label>
+      <br>
+      <label>
+        PostalCode:
+          <input type="text" [formControl]="postalCode">
+      </label>
+      <br>
+      <label>
+        City:
+          <input type="text" [formControl]="city">
+      </label>
     </fieldset>
-    <button type="submit">Inscription</button>
-  </form>
+    <button type="submit" (click)="inscription()">Inscription</button>
 
   <h3>Votre profil</h3>
   <label>
-    Username: {{ username.value }}
+    Username: {{ user.username }}
   </label>
   <br>
   <label>
-    Email: {{ email.value }}
+    Email: {{ user.email }}
   </label>
   <br>
   <label>
-    Password: {{ password.value }}
+    Password: {{ user.password }}
   </label>
   <br>
 </div>

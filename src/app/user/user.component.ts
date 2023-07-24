@@ -9,6 +9,8 @@ import { User } from './user.model';
 })
 export class UserComponent {
 
+  user: User = new User('', '', '', '', '', '');
+
   username = new FormControl('daniel');
   email = new FormControl('');
   password = new FormControl('');
@@ -16,11 +18,19 @@ export class UserComponent {
   postalCode = new FormControl('');
   city = new FormControl('');
 
-  // user: User = new User('', '', '', '', '', '');
-  constructor() {}
+  inscription() {
+    const usernameValue = this.username.value;
+    const passwordValue = this.password.value;
+    const emailValue = this.email.value;
+    const streetValue = this.street.value;
+    const postalCodeValue = this.postalCode.value;
+    const cityValue = this.city.value;
 
-  onSubmit() {
-    console.log(this.username.value);
-
+    this.user.username = usernameValue || '';
+    this.user.password = passwordValue || '';
+    this.user.email = emailValue || '';
+    this.user.street = streetValue || '';
+    this.user.postalCode = postalCodeValue || '';
+    this.user.city = cityValue || '';
   }
 }
